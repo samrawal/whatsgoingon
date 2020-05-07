@@ -6,4 +6,3 @@ You can use =whatsgoingon= to keep track of:
 - Experiment status (running/completed/etc.)
 - Specific notes associated with the project (i.e. hyperparameters, run results)
 - Specific files associated with the project
-
