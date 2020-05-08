@@ -1,5 +1,5 @@
-* whatsgoingon
-=whatsgoingon= is a very thin wrapper to help keep track of software running status and its outputs, such as research experiments. I created it to quickly keep track of the many research experiments I was running simultaneously. 
+* whatsgoingon 🤷‍♂️
+=whatsgoingon= is a very thin wrapper to help keep track of software running status and its outputs, such as research experiments. I created it as a very simple method to keep track of the many research experiments I was running simultaneously. 
 
 You can use =whatsgoingon= to keep track of:
 
