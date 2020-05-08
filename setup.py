@@ -1,7 +1,7 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name='whatsgoingon',    
     version='0.1',
-    scripts=['src/whatsgoingon']
+    packages=find_packages()
 )
