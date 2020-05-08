@@ -102,3 +102,8 @@ class whatsgoingon():
         conn.commit()
         conn.close()
         
+    def _to_pandas(self):
+        import pandas as pd
+        conn = sqlite3.connect(self.database)
+        df = pd.read_sql_query("SELECT * FROM runs", conn)
+        return df
