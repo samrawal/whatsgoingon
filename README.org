@@ -1,4 +1,4 @@
-# whatsgoingon
+* whatsgoingon
 =whatsgoingon= is a very thin wrapper to help keep track of software running status and its outputs, such as research experiments. I created it to quickly keep track of the many research experiments I was running simultaneously. 
 
 You can use =whatsgoingon= to keep track of:
@@ -6,3 +6,55 @@ You can use =whatsgoingon= to keep track of:
 - Experiment status (running/completed/etc.)
 - Specific notes associated with the project (i.e. hyperparameters, run results)
 - Specific files associated with the project
+
+  
+
+** The information you can log
+*** Run Details
+    - Each run is under a "project" (each project gets its own database)
+    - Each run has a "nickname"
+    - Each run has a "notes" section (i.e. description of the run, hyperparameters used, etc.)
+*** Run Status Info
+    - Run start time
+    - Run end time
+*** Files
+    - Two main ways of storing files: softlinks and hardcopies
+        - **softlinks**: just capture the absolute path of the particular file and store it
+        - **hardcopy**: copy over files to the directory in `whatsgoingon → project → nickname`
+            - pickle: pass in Python object, save as pickle
+            - copyfile: copy a written file over to the directory
+
+
+** How to use
+Running =whatsgoingon= for the first time will result in a configuration file being created at =~/.whatsgoingon.config= and a directory at =~/.whatsgoingon=. You can change the path of the directory in the config file, and specify the config file path when using =whatsgoingon= in your code as well.
+
+
+#+BEGIN_SRC python
+from whatsgoingon import whatsgoingon as wgo
+
+w = wgo('MyProject', 'RunName_1')
+w.start()
+
+w.add_notes('Hyperparameters for my run: alpha=0.5, beta=0.2')
+
+# any code you want to track here
+train_model_here()
+results = get_results()
+
+# log some files -- softlink, hardcopy, or hardcopy_pickle
+# softcopy will only store a link to a path (like filepath)
+# hardcopy will copy over the file/data object to the `whatsgoingon` project directory
+w.file_softlink('my_model.hd5')
+w.file_hardcopy('experiment_results.txt')
+w.file_hardcopy_pickle(results, 'results.p')
+
+w.end()
+#+END_SRC
+
+
+
+
+** Monitoring Runs
+Running =serve.py= will launch a Flask app that will allow you to select a project, which you can select to view the runs for that project.
+
+[[./images/serve_screenshot.png]]
