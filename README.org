@@ -9,11 +9,15 @@ You can use =whatsgoingon= to keep track of:
 
   
 ** Installation
-Clone the repository to be able to run the =serve.py= file for the dashboard.
+Install via pip or local copy:
 
 #+BEGIN_SRC shell
+# Install using pip
+pip install git+https://github.com/samrawal/whatsgoingon
+
+# Clone locally and install
 git clone git@github.com:samrawal/whatsgoingon.git
-cd whatsgoingon
+cd whatsgoingon/whatsgoingon
 pip install .
 #+END_SRC
 
