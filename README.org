@@ -63,6 +63,12 @@ w.end()
 
 
 ** Monitoring Runs
-Running =serve.py= will launch a Flask app that will allow you to select a project, which you can select to view the runs for that project.
+To monitor runs, you can launch the dashboard, which will serve a Flask app at http://localhost:5000
+
+#+BEGIN_SRC python
+from whatsgoingon import dashboard
+
+dashboard()
+#+END_SRC
 
 [[./images/serve_screenshot.png]]

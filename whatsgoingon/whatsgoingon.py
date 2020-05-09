@@ -5,6 +5,7 @@ import os
 from datetime import datetime
 from shutil import copyfile
 import pickle
+import serve
 
 class whatsgoingon():
     def __init__(self, project, nickname, notes=' ', config='~/.whatsgoingon.config'):
@@ -107,3 +108,7 @@ class whatsgoingon():
         conn = sqlite3.connect(self.database)
         df = pd.read_sql_query("SELECT * FROM runs", conn)
         return df
+
+def dashboard():
+    serve.run()
+ 
