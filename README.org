@@ -31,8 +31,8 @@ pip install .
     - Run end time
 *** Files
     - Two main ways of storing files: softlinks and hardcopies
-        - **softlinks**: just capture the absolute path of the particular file and store it
-        - **hardcopy**: copy over files to the directory in `whatsgoingon → project → nickname`
+        - *softlinks*: just capture the absolute path of the particular file and store it
+        - *hardcopy*: copy over files to the directory in `whatsgoingon → project → nickname`
             - pickle: pass in Python object, save as pickle
             - copyfile: copy a written file over to the directory
 
