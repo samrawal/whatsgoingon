@@ -61,6 +61,14 @@ class whatsgoingon():
         """
         self._database_command(self.database, cmd)
 
+    def status(self, statustext_):
+        statustext = str(statustext_)
+        cmd = f"""
+        UPDATE runs SET status = '{statustext}' WHERE nickname = '{self.nickname}'
+        """
+        self._database_command(self.database, cmd)
+
+
     def file_softlink(self, filepath):
         self.files.append(filepath)
         self._update_files()
@@ -111,4 +119,3 @@ class whatsgoingon():
 
 def dashboard():
     serve.run()
- 

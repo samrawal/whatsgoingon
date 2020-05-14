@@ -29,6 +29,7 @@ pip install .
 *** Run Status Info
     - Run start time
     - Run end time
+    - Status field -- meant for few words status that is updated regularly (as opposed to "notes", to which new entries are appended)
 *** Files
     - Two main ways of storing files: softlinks and hardcopies
         - *softlinks*: just capture the absolute path of the particular file and store it

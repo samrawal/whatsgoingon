@@ -23,7 +23,7 @@ def initial_setup(CONFIG_FILE='~/.whatsgoingon.config'):
 def create_table(database):
     conn = sqlite3.connect(database)
     cmd = '''
-    CREATE TABLE runs (nickname text PRIMARY KEY, notes text, start text, end text, files text, filenames text)
+    CREATE TABLE runs (nickname text PRIMARY KEY, notes text, status text, start text, end text, files text, filenames text)
     '''
     c = conn.cursor()
     c.execute(cmd)
