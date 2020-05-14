@@ -1,13 +1,13 @@
-import whatsgoingon_utils as wgo_util
+from whatsgoingon import whatsgoingon_utils as wgo_util
+from whatsgoingon import serve
 import sqlite3
 import json
 import os
 from datetime import datetime
 from shutil import copyfile
 import pickle
-import serve
 
-class whatsgoingon():
+class logger():
     def __init__(self, project, nickname, notes=' ', config='~/.whatsgoingon.config'):
         # load config or create new one if doesn't exist
         config = os.path.expanduser(config)
