@@ -8,7 +8,11 @@ from shutil import copyfile
 import pickle
 
 class logger():
-    def __init__(self, project, nickname, notes=' ', config='~/.whatsgoingon.config'):
+    def __init__(self, project, nickname=None, notes=' ', config='~/.whatsgoingon.config'):
+        if nickname is None:
+            nickname = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+
+        
         # load config or create new one if doesn't exist
         config = os.path.expanduser(config)
         if not os.path.exists(config):
